@@ -15,7 +15,7 @@ class WeatherSearchPage extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 16),
         alignment: Alignment.center,
-        //TODO: Display the weather and loading indicator using Bloc
+        //TODO: Display the weather and loading indicator using Bloc Okay
         child: BlocListener<WeatherBloc, WeatherState>(
           listener: (context, state) {
             if (state is WeatherError) {
@@ -78,11 +78,11 @@ class WeatherSearchPage extends StatelessWidget {
           child: Text('See Details'),
           color: Colors.lightBlue[100],
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => WeatherDetailPage(
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+              return WeatherDetailPage(
                 masterWeather: weather,
-              ),
-            ));
+              );
+            }));
           },
         ),
         CityInputField(),
@@ -109,7 +109,7 @@ class CityInputField extends StatelessWidget {
   }
 
   void submitCityName(BuildContext context, String cityName) {
-    //TODO: Fetch the weather from the repository and display it somehow
+    //TODO: Fetch the weather from the repository and display it somehow Okay
     // ignore: close_sinks
     final weatherBloc = BlocProvider.of<WeatherBloc>(context);
     weatherBloc.add(GetWeather(cityName: cityName));

@@ -11,7 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        builder: (context) => WeatherBloc(FakeWeatherRepository()),
-        child: MaterialApp(title: 'Weather App', home: WeatherSearchPage()));
+      builder: (context) => WeatherBloc(FakeWeatherRepository()),
+      child: MaterialApp(
+        title: 'Weather App',
+        home: WeatherSearchPage(),
+      ),
+    );
   }
 }
